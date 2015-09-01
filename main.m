@@ -1,5 +1,6 @@
 % A small code to get delta W k for tokamak plasmas
 
+
 clear;
 close all;
 global R0 a rhoh 
