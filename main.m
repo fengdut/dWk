@@ -1,3 +1,5 @@
+% A small code to get delta W k for tokamak plasmas
+
 clear;
 close all;
 global R0 a rhoh 
@@ -15,6 +17,9 @@ ni=(wib-wia)/dwi;
 dWF=0.5; % MHD contribution to delta W
 w=[];
 dWk(0.1+0.01*i)
+
+
+
 %f=@(x)i*x+dWF+dWk(x); % fishbone dispersion relation, iomega/omega_A+dWF+dWk(omega)=0
 %for j=1:ni
 %    wi=wia+(j-1)*dwi;
