@@ -16,12 +16,7 @@ sssum=0.0;
 % using Simpson rule for three dimension integration
 for j=1:nxo2
     
-    
-
-    
     x0=xa+dx*(j-1)*2.0
-    j
-
     x1=xa+dx*((j-1)*2.0+1);
     x2=xa+dx*((j-1)*2.0+2);
     ssum0=0.0;
@@ -35,14 +30,12 @@ for j=1:nxo2
         L0=La+dL*(j1-1)*2.0;
         L1=La+dL*((j1-1)*2.0+1.0);
         L2=La+dL*((j1-1)*2.0+2.0);
-       j1
-      L0
+
         sum0=0.0;
         sum1=0.0;
         sum2=0.0;
 
         for j2=1:nEo2
-            j2
              epsilon0=Ea+dE*(j2-1)*2.0;
              epsilon1=Ea+dE*((j2-1)*2.0+1.0);
              epsilon2=Ea+dE*((j2-1)*2.0+2.0);

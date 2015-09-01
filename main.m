@@ -1,5 +1,7 @@
 clear;
 close all;
+
+
 global R0 a rhoh 
 R0=1.65;
 a=0.4;
@@ -14,7 +16,9 @@ wib=0.51;
 ni=(wib-wia)/dwi;
 dWF=0.5; % MHD contribution to delta W
 w=[];
-dWk(0.1+0.01*i)
+dWk(0.1+0.01i)
+
+
 %f=@(x)i*x+dWF+dWk(x); % fishbone dispersion relation, iomega/omega_A+dWF+dWk(omega)=0
 %for j=1:ni
 %    wi=wia+(j-1)*dwi;
