@@ -1,10 +1,10 @@
 function f=dWk(omega)
-dx=0.1;
-dE=0.5;
-dL=0.1;
+dx=0.01;
+dE=0.1;
+dL=0.01;
 xa=0.0;
 xb=1.0;
-Ea=0.2;
+Ea=0.1;
 Eb=4.0;
 La=0;
 nx=(xb-xa)/dx;
@@ -15,26 +15,22 @@ tau=1.0;
 sssum=0.0;
 % using Simpson rule for three dimension integration
 for j=1:nxo2
-    
-    x0=xa+dx*(j-1)*2.0
+    x0=xa+dx*(j-1)*2.0;
     x1=xa+dx*((j-1)*2.0+1);
     x2=xa+dx*((j-1)*2.0+2);
     ssum0=0.0;
     ssum1=0.0;
     ssum2=0.0;
-    Lb=(1-eps1(x0)-0.1); % Lambda is a function of x
+    Lb=1-eps1(x0); % Lambda is a function of x
     nL=(Lb-La)/dL;
     nLo2=nL/2;
     for j1=1:nLo2
-        
         L0=La+dL*(j1-1)*2.0;
         L1=La+dL*((j1-1)*2.0+1.0);
         L2=La+dL*((j1-1)*2.0+2.0);
-
         sum0=0.0;
         sum1=0.0;
         sum2=0.0;
-
         for j2=1:nEo2
              epsilon0=Ea+dE*(j2-1)*2.0;
              epsilon1=Ea+dE*((j2-1)*2.0+1.0);
@@ -64,7 +60,7 @@ for j=1:nxo2
          end
             ssum0=ssum0+dL/3*(sum0+4.0*sum1+sum2);
     end
-    Lb=1-eps1(x1)-0.1;
+    Lb=1-eps1(x1);
     nL=(Lb-La)/dL;
     nLo2=nL/2;
     for j1=1:nLo2
@@ -103,7 +99,7 @@ for j=1:nxo2
          end
             ssum1=ssum1+dL/3*(sum0+4.0*sum1+sum2);
     end
-    Lb=1-eps1(x2)-0.1;
+    Lb=1-eps1(x2);
     nL=(Lb-La)/dL;
     nLo2=nL/2;
     for j1=1:nLo2

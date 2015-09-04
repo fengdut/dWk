@@ -1,4 +1,5 @@
 function f=eps1(x)
-e=0.23; % inverst aspect ratio
-f=e*x;
+ % inverst aspect ratio
+global eps;
+f=eps*x;
 end

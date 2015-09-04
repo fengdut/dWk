@@ -1,3 +1,3 @@
-function f=xi_r(t,x)
+function f=xi_r(x,rs)
 f=x*sin(t);
 end
