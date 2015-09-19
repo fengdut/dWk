@@ -1,0 +1,6 @@
+function f=xi_r(t,x)
+global xs
+if x<=xs
+f=x*cos(t);
+elseif x>=xs-deltax/2
+end

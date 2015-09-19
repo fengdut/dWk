@@ -1,0 +1,7 @@
+function f=dtfun(Lambda,t,x,tau) % which is d(omega_b*t)
+%kappa=(1-Lambda.*(1-eps1(x)))./(2.0.*eps1(x).*Lambda);
+%f=pi*sqrt(kappa.*eps1(x).*Lambda/2)./...
+%    (b(t,x).*sqrt(1-Lambda./b(t,x)).*...
+%     ellipke(1./kappa))*tau;
+ f=1./(b(t,x).*sqrt(1-Lambda./b(t,x)));
+end

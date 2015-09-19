@@ -1,0 +1,6 @@
+function f=Y1(Lambda,t,tf,x,p)  % the integrand of Yp
+
+f=pi*sqrt(kappa.*eps1(x).*Lambda/2).*...
+    Gfun(Lambda,t,x).*exp(-i*p*tf)./...
+     ellipke(1./kappa); % tf: time as function of theta
+end

@@ -1,0 +1,5 @@
+function f=omega_star(epsilon,x)
+global R0 a rhoh mn
+mn=1.0; % poloidal mode number
+f=mn*denp(x).*FE(epsilon)*R0*rhoh/(a^2*2*x;
+end
