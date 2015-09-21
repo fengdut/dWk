@@ -1,8 +1,6 @@
 function f=WF(omega,Lambda,epsilon,x,Yp) % the integrand of delta_W, omega is imaginary number normalized to vth/R0. vth=sqrt(2Th/M)
-global nn
+global nn p np
 g=0.0;
-p=-1:1;
-np=length(p);
 Yp1=zeros(1,np);
 Yp1(:)=Yp;
     for j=1:np

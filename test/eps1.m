@@ -1,4 +1,4 @@
 function f=eps1(x)
-e=0.23; %  aspect ratio
+global e  %  aspect ratio
 f=e*x;
 end

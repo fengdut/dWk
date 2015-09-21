@@ -1,3 +1,9 @@
-function f=dFdE(epsilon) % the partial derivative of the distribution with respect to energy
-f=-exp(-epsilon);
+function f=dFdE(epsilon) % the partial derivative of the distribution 
+% of energy compenont with respect to energy
+global epsilonc epsilon0 deltae
+epsilon1=(epsilon-epsilon0)/deltae;
+f=-1.5./(epsilon.^1.5+epsilonc.^1.5).^2.*...
+    epsilon.^0.5.*erf(epsilon1)+...
+    1./(epsilon.^1.5+epsilonc.^1.5).*...
+    exp(-epsilon1.^2)*2./(sqrt(pi).*deltae);
 end
