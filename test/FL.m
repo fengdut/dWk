@@ -1,5 +1,5 @@
 function f=FL(Lambda) % distribution of Lambda component
-deltaL=0.8;
-L0=0.1;
-f=exp(((Lambda-L0)./deltaL^0.2).^2);
+global Lambda0 deltaL
+Lambda1=(Lambda-Lambda0)./deltaL.^0.2;
+f=exp(Lambda1.^2);
 end
