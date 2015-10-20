@@ -1,3 +1,5 @@
-function f=qprofile(x)
-f=0.5+2*x.^2;
+function q_1D=qprofile(nx,xarray)
+
+q_1D=0.5+2*xarray.^2;
+
 end

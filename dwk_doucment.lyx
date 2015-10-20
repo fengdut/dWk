@@ -486,7 +486,7 @@ Define
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 Define 
 \begin_inset Formula $B_{\Lambda}(\theta,r,\Lambda)=\frac{1}{b\sqrt{(1-\Lambda_{b})}}$
 \end_inset
@@ -517,6 +517,77 @@ Define
 \delta W_{k}=-\pi^{2}\left(\frac{eBa}{\Omega}\right)^{2}R_{0}n_{0}\frac{T_{h}}{M}\int\frac{\bar{j}}{q}dx\int d\Lambda\bar{\epsilon}^{3}d\bar{\epsilon}\frac{\partial\bar{F}}{\partial\bar{\epsilon}}\bar{\tau_{b}}(\bar{\omega}-\bar{\omega}_{\star})\sum_{p=0,\pm1}\frac{|Y_{p}|^{2}}{n\langle\dot{\phi}\rangle+\omega_{b}-\omega}
 \end{equation}
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F(r,\epsilon,\Lambda)=\frac{1}{\epsilon^{3/2}+\epsilon_{c}^{3/2}}Erfc\left(\frac{\epsilon-\epsilon_{0}}{\Delta\epsilon}\right)\exp\left[-\left(\frac{r-r_{0}}{\Delta r}\right)^{2}\right]\exp\left(-(\frac{\Lambda-\Lambda_{0}}{\Delta\Lambda})^{2}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial F}{\partial\epsilon}=-\left[\frac{2\exp(-(\frac{\epsilon-\epsilon_{0}}{\Delta\epsilon})^{2})}{\sqrt{\pi}\Delta\epsilon(\epsilon^{3/2}+\epsilon_{c}^{3/2})}+\frac{3\sqrt{\epsilon}Erfc(\frac{\epsilon-\epsilon_{0}}{\Delta\epsilon})}{2(\epsilon^{3/2}+\epsilon_{c}^{3/2})^{2}}\right]\exp\left[-\left(\frac{r-r_{0}}{\Delta r}\right)^{2}\right]\exp\left(-(\frac{\Lambda-\Lambda_{0}}{\Delta\Lambda})^{2}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial F}{\partial r}=\frac{1}{\epsilon^{3/2}+\epsilon_{c}^{3/2}}Erfc\left(\frac{\epsilon-\epsilon_{0}}{\Delta\epsilon}\right)\frac{2(r_{0}-r)}{\Delta r^{2}}\exp\left[-\left(\frac{r-r_{0}}{\Delta r}\right)^{2}\right]\exp\left(-(\frac{\Lambda-\Lambda_{0}}{\Delta\Lambda})^{2}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\omega_{\star}=\frac{1}{r}\frac{R}{a}\frac{\rho_{h}}{a}\frac{m}{2}\frac{\partial F/\partial r}{\partial F/\partial\epsilon}=
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial F}{\partial\epsilon}\omega_{\star}=\frac{R\rho_{h}m}{2ra^{2}}\frac{\partial F}{\partial r}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $R=n\langle\dot{\phi}\rangle+\omega_{b}-\omega=n\omega_{\phi}(\epsilon,\Lambda,r)+\omega_{b}(\epsilon,\Lambda,r)-\omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $Y_{p}R=\frac{|Y_{p}|^{2}}{R}$
 \end_inset
 
 
