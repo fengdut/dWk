@@ -14,7 +14,7 @@ e=a/R0;
 rhoh=0.08; % vh/Omega=sqrt(2Th/M)/Omega, Omega=Be/M
 xs=0.4; % rs/a position of rational surface q=1
 deltax=0.06; % the artificial width along q=1 surface
-rhod=0.01; % the drift orbit width
+%rhod=0.01; % the drift orbit width
 xi0=1.0; % ratio of displacement to minor radius, xi0/a
 epsilonc=4.0; % critical energy of slow down distribution
 epsilon0=5.0; % 
@@ -28,9 +28,9 @@ omega=5.0;
 mn=1; % poloidal mode number
 nn=1; % toroidal mode number
 
-nL=100; % Lambda grid number 
+nL=20; % Lambda grid number 
 nt=20; % theta grid number for poloidal angle
-nx=20; % x grid number for position
+nx=10; % x grid number for position
 ne=20; % epsilon grid number for energy
 
 
@@ -77,7 +77,7 @@ tfun3D=zeros(nL+1,nx+1,nt+1); % collect tfun(Lambda,x,theta) data
 p=-1:1;                       % p=-1,0,1
 np=length(p);                 
 
-Yp3D=zeros(np,nL+1,nx+1); % collect Yp(p,Lambda,x) data 
+Yp4D=zeros(np,ne+1,nL+1,nx+1); % collect Yp(p,epsilon,Lambda,x) data 
                           %  store as 3D array
                           %  according to above 
                           %  defined coordinate grids
@@ -100,9 +100,10 @@ for j=1:nL                % j=nL+1 ellipitic function become infinite.
     end
 end
 for j2=1:np
+ for j3=1:ne+1
   for j=1:nL
     for j1=1:nx+1
-        Yp3D(j2,j,j1)=Yp(Lambda(j,j1),tfun3D(j,j1,:),x(j1),p(j2),tau); % the data 
+        Yp4D(j2,j3,j,j1)=Yp(Lambda(j,j1),ee(j3),tfun3D(j,j1,:),x(j1),p(j2),tau); % the data 
     end                                      % of Yp store as 3D 
                                               % array, which also acc-
                                               % -elerates the speed 
@@ -111,11 +112,12 @@ for j2=1:np
         
     
   end
+ end
 end
 for j2=1:ne+1
   for j=1:nL
     for j1=1:nx+1
-        WF3D(j2,j,j1)=WF(omega,Lambda(j,j1),ee(j2),x(j1),Yp3D(:,j,j1)); % the data 
+        WF3D(j2,j,j1)=WF(omega,Lambda(j,j1),ee(j2),x(j1),Yp4D(:,j2,j,j1)); % the data 
     end                                      % of WF store as 3D 
                                              % array, which also 
                                              % accelerates the speed 
