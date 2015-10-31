@@ -1,3 +1,3 @@
 function f=qprofile(x)
-f=1+x.^2;
+f=0.5+2.0*x.^2;
 end

@@ -12,18 +12,11 @@ R0=1.65; % major radius unit m
 a=0.40;  % minor radius
 e=a/R0;
 rhoh=0.08; % vh/Omega=sqrt(2Th/M)/Omega, Omega=Be/M
-xs=0.4; % rs/a position of rational surface q=1
+xs=0.5; % rs/a position of rational surface q=1
 deltax=0.06; % the artificial width along q=1 surface
-%rhod=0.01; % the drift orbit width
 xi0=1.0; % ratio of displacement to minor radius, xi0/a
-epsilonc=4.0; % critical energy of slow down distribution
-epsilon0=5.0; % 
-deltae=1.0; % energy width
-x0=0.6; % injection position of NBI
-deltax0=1.0; % density width
-Lambda0=0.1; % injection Lambda of NBI
-deltaL=1.0; % Lambda density width
-omega=5.0;
+
+omega=1.5+0.1e-02i;
 
 mn=1; % poloidal mode number
 nn=1; % toroidal mode number
@@ -40,8 +33,18 @@ La=1e-06; % left boundary of Lambda
 Lb=1-0.3; % right boundary of Lambda
 ta=1e-06; % left boundary of theta
 tb=2*pi;  % right boundary of theta
-ea=1e-06; % left boundary of epsilon
-eb=4.0;   % right boundary of epsilon
+ea=1e-01; % left boundary of epsilon
+eb=5.0;   % right boundary of epsilon
+
+% distribution function
+epsilonc=0.8*eb; % critical energy of slow down distribution
+epsilon0=eb; % 
+deltae=1.0; % energy width
+x0=0.0; % injection position of NBI
+deltax0=0.3; % density width
+Lambda0=0.05; % injection Lambda of NBI
+deltaL=0.02; % Lambda density width
+
 
 % coordinate grids
 
