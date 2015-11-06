@@ -21,10 +21,10 @@ omega=1.5+0.1e-02i;
 mn=1; % poloidal mode number
 nn=1; % toroidal mode number
 
-nL=20; % Lambda grid number 
-nt=20; % theta grid number for poloidal angle
-nx=10; % x grid number for position
-ne=20; % epsilon grid number for energy
+nL=50; % Lambda grid number 
+nt=50; % theta grid number for poloidal angle
+nx=50; % x grid number for position
+ne=50; % epsilon grid number for energy
 
 
 xa=1e-06; % left boundary of x
@@ -61,7 +61,7 @@ end
             
 
 dt=(tb-ta)/nt;
-t=ta:dt:tb;  %left boundary of t  should be finite, 
+t=ta:dt:tb;  %left boundary of theta  should be finite, 
              % otherwise, cannot form the grids of t for caculating theta
              % array t construct priorly which will 
              %accelerate the speed without caculating tj every step.
@@ -90,7 +90,7 @@ WF3D=zeros(ne+1,nL+1,nx+1); % collect WF(epsilon,Lambda,x) data
                             % according to above 
                             % defined coordinate grids
 
-
+tic
 for j=1:nL                % j=nL+1 ellipitic function become infinite.
     for j1=1:nx+1         % elliminte this point
         for j2=1:nt+1
@@ -102,6 +102,8 @@ for j=1:nL                % j=nL+1 ellipitic function become infinite.
         
     end
 end
+toc
+tic
 for j2=1:np
  for j3=1:ne+1
   for j=1:nL
@@ -117,6 +119,8 @@ for j2=1:np
   end
  end
 end
+toc
+tic
 for j2=1:ne+1
   for j=1:nL
     for j1=1:nx+1
@@ -130,9 +134,9 @@ for j2=1:ne+1
     
   end
 end
-
+toc
 % calculating delta W_k 3D integral
-
+tic
 WFe=zeros(1,ne+1);
 I1=zeros(1,nL);
 I2=zeros(1,nx+1);
@@ -150,6 +154,6 @@ for j1=1:nx+1
 end
 I3=simp(nx+1,dx,I2); % intergral of I2 with 
                      % respect to x
-                     
+toc                     
                      
                      
