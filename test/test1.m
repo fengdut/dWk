@@ -28,8 +28,8 @@ mn=1; % poloidal mode number
 nn=1; % toroidal mode number
 
 nL=22; % Lambda grid number 
-nt=52; % theta grid number for poloidal angle
-nx=52; % x grid number for position
+nt=22; % theta grid number for poloidal angle
+nx=22; % x grid number for position
 ne=22; % epsilon grid number for energy
 
 
@@ -143,7 +143,7 @@ WF4D=zeros(no,ne+1,nL+1,nx+1); % collect WF(epsilon,Lambda,x) data
 
 tic
 
-for j=1:nL
+for j=1:nL+1
 
     for j1=1:nx+1
         kappa2D(j,j1)=kappa(Lambda(j,j1),eps1_1D(j1));
@@ -173,7 +173,7 @@ for j2=1:no
 end
 toc
 tic
-for j=1:nL
+for j=1:nL+1
     for j1=1:ne+1
 
        for j2=1:nx+1
@@ -187,7 +187,7 @@ toc
 tic
 for j4=1:np
  for j3=1:no
-  for j=1:nL
+  for j=1:nL+1
     for j1=1:ne+1
 
        for j2=1:nx+1
@@ -213,7 +213,7 @@ end
 toc
 
 tic
-for j3=1:nL
+for j3=1:nL+1
     for j2=1:ne+1
         for j1=1:nt+1
             %for j=1:nx+1
@@ -225,7 +225,7 @@ for j3=1:nL
 end
 toc
 tic
-for j3=1:nL
+for j3=1:nL+1
     for j2=1:ne+1
         for j1=1:nt+1
             for j=1:nx+1
@@ -237,7 +237,7 @@ for j3=1:nL
 end
 toc
 tic
-for j3=1:nL
+for j3=1:nL+1
     for j2=1:ne+1
         for j1=1:nt+1
             %for j=1:nx+1
@@ -256,7 +256,7 @@ toc
 
 
 tic
-for j=1:nL                % j=nL+1 ellipitic function become infinite.
+for j=1:nL+1                % j=nL+1 ellipitic function become infinite.
     for j1=1:nt+1         % elliminte this point
         for j2=1:nx+1
         tfun3D(j,j1,j2)=tfun(kappa2D(j,j2),Lambda(j,j2),t(j1),x(j2),...
@@ -271,7 +271,7 @@ end
 toc
 tic
 for j4=1:np
-  for j3=1:nL
+  for j3=1:nL+1
     for j2=1:ne+1
         for j1=1:nt+1
             for j=1:nx+1
@@ -286,7 +286,7 @@ toc
 tic
 for j2=1:np
  for j3=1:ne+1
-  for j=1:nL
+  for j=1:nL+1
     for j1=1:nx+1
         fY1_1D(:)=Y1_5D(j2,j,j3,:,j1);
         Yp4D(j2,j3,j,j1)=Yp(fY1_1D,...
@@ -305,7 +305,7 @@ toc
 tic
 for j3=1:no
  for j2=1:ne+1
-  for j=1:nL
+  for j=1:nL+1
     for j1=1:nx+1
         fYp1D(:)=Yp4D(:,j2,j,j1);
         fR_term1D(:)=R_term5D(j3,:,j,j2,j1);
@@ -331,17 +331,17 @@ tic
 I3=zeros(1,no);
 for j2=1:no
    WFe=zeros(1,ne+1);
-   I1=zeros(1,nL);
+   I1=zeros(1,nL+1);
    I2=zeros(1,nx+1);
 
  for j1=1:nx+1
-    for j=1:nL
+    for j=1:nL+1
         WFe(:)=WF4D(j2,:,j,j1);
         I1(j)=simp(ne+1,de,WFe); % integral of WF with 
                                  % respect to epsilon at 
                                  % fixed x and for nL Lambda's
     end
-    I2(j1)=simp(nL,dL,I1); % integral of I1 with 
+    I2(j1)=simp(nL+1,dL,I1); % integral of I1 with 
                            % respect to Lambda for
                            % nx+1 x's
  end
