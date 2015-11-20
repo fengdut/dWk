@@ -9,10 +9,10 @@ n_mode=1;  %toroidal mode number
 
 R0=1.65;
 a=0.4;
-rhoh=0.05;
+rhoh=0.08;
 rs=0.5;
 eps=a/1.65;
-delta_r=0.1;
+delta_r=0.06;
 
 
 xa=1e-6;     %r_min, avoid r==0
@@ -24,11 +24,11 @@ Eb=5.0;       %E_max
 La=1e-6;      %Lambda_min
 Lb=0.1;        %lambda_max
 
-nx=100;        %grid number of radial
-nL=100;         %grid number of lambda 
-nE=100;         %grid number of energy
+nx=22;        %grid number of radial
+nL=22;         %grid number of lambda 
+nE=2;         %grid number of energy
 
-ntheta=100;       %grid number of theta
+ntheta=22;       %grid number of theta
 
 modn=mod(nx,3);
 if(modn~=1)
@@ -65,6 +65,7 @@ Earray=Ea:dE:Eb;
 tau=1.0;
 sigma=1;
 p=-1;
+p=0;
 
 tic
 q_1D=qprofile(nx,xarray); 
@@ -82,34 +83,34 @@ toc
 tic
 [Theta_3D]   =Theta(b_lambda_3D,ntheta,dtheta,nx,xarray,nL,Larray);         %Theta_3D(theta,x,L)
 
-toc
-tic
+% toc
+% tic
 [G_2D]       =G(ntheta,thetaarray,nx,xarray,rs,delta_r);                    %G_2D(theta,x)
 
-toc
-tic
+% toc
+% tic
 [Chi_2D,kappa_2D,K_2D] = Chi(nx,xarray,nL,Larray,sigma);                    %Chi_2D(x,L),kappa_2D(x,L),K_2D(x,L)
 
-toc
-tic
+% toc
+% tic
 [Yps_2D]     = Yps (G_2D,Chi_2D,b_lambda_3D,lambda_b_3D,Theta_3D,nx,nL,ntheta,dtheta,sigma,p);  %Yps_2D(x,L)
 
-toc
-tic
+% toc
+% tic
 omega_b_3D=omega_b(nx,xarray,nE,Earray,nL,Larray,kappa_2D,K_2D,q_1D);            %omega_b_3D(x,L,E)
-toc
-tic
+% toc
+% tic
 omega_phi_3D=omega_phi(omega_b_3D,nx,xarray,q_1D);                               %omega_phi_3D(x,L,E)
 
 Yp2 = abs(Yps_2D).^2; %Yp2(r,lambda)                                        %Yp2(x,L)
 
-toc
-tic
+% toc
+% tic
 F_E_3D=dFdE(nx,xarray,nL,Larray,nE,Earray);
 F_r_3D=dFdr(nx,xarray,nL,Larray,nE,Earray);
 
-toc
-tic
+% toc
+% tic
 
 tau_b_3D=2*pi./omega_b_3D;
 J_1D=Jac(nx,xarray);

@@ -16,11 +16,13 @@ omega_a(1:n_omega)=0+0i;
 sum_dwk(1:n_omega)=0;
 
 dsmall=0.001i;
+nn_omega=1;
 for iiomega=1:nn_omega
 %small_imag=small_imag +dsmall;
 for iomega=1:n_omega
 
     omega=omega_0+domega*(iomega-1)+small_imag*iiomega;
+    omega=1.5+0.001i;
 omega_a(iiomega)=omega;
 m_p=0;
 
@@ -54,9 +56,10 @@ end
 end
 xp=imag(omega_a);
 yp=imag(sum_dwk);
+sum_dwk
 plot(imag(omega_a),imag(sum_dwk),'o--');
 hold all;
-toc
+%toc
 
 
 

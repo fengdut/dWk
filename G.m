@@ -52,5 +52,7 @@ for ix=1:nx
     end
 end
 G_2D = (gtt.*kappa_t +grt.*kappa_r).*xi_t +(grr.*kappa_r +grt.*kappa_t).*xi_r;
+%G_2D = gtt.*kappa_t;% +grt.*kappa_r).*xi_t +(grr.*kappa_r +grt.*kappa_t).*xi_r;
+
 
 end
