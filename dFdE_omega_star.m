@@ -1,7 +1,7 @@
 function dFdE_omega_star_3D=dFdE_omega_star(nx,xarray,nL,Larray,nE,Earray,F_r_3D)  %3D (r,Lambda,E)
-    global R0 a
+    global R0 a m_mode
     dFdE_omega_star_3D(1:nx,1:nL,1:nE)=0;
-    m=1;
+    m=m_mode;
     rho_h=0.1;
     c= R0*rho_h*m/a^2;
     

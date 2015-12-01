@@ -1,4 +1,4 @@
-function [F_3D,F_x,F_L,F_E]=F0_3D(nx,xarray,nL,Larray,nE,Earray,x0,xd,L0,Ld,E0,Ed,Ec)
+function [F_3D]=F0_3D(nx,xarray,nL,Larray,nE,Earray,x0,xd,L0,Ld,E0,Ed,Ec)
 %slowing down distribution function
 F_3D(1:nx,1:nL,1:nE)=0;
 
@@ -16,6 +16,10 @@ for iE=1:nE
     end
 end
 
-
-
 end
+
+
+
+
+
+

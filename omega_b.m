@@ -2,8 +2,6 @@ function omega_b_3D=omega_b(nx,xarray,nE,Earray,nL,Larray,kappa,K,q_1D)
 
 global  eps
 
-
-
 omega_b_3D(1:nx,1:nL,1:nE)=0;
 for ix=1:nx
     for iL=1:nL

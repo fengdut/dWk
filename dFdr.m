@@ -1,3 +1,5 @@
+
+
 function F_r_3D=dFdr(nx,xarray,nL,Larray,nE,Earray) % the partial derivative of the distribution 
 global rd r0 Ld L0 Ed E0 Ec;
 F_r_3D(1:nx,1:nL,1:nE) = 0;

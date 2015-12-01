@@ -558,7 +558,7 @@ F(r,\epsilon,\Lambda)=\frac{1}{\epsilon^{3/2}+\epsilon_{c}^{3/2}}Erfc\left(\frac
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\omega_{\star}=\frac{1}{r}\frac{R}{a}\frac{\rho_{h}}{a}\frac{m}{2}\frac{\partial F/\partial r}{\partial F/\partial\epsilon}=
+\omega_{\star}=\frac{1}{r}\frac{R}{a}\frac{\rho_{h}}{a}\frac{m}{2}\frac{\partial F/\partial r}{\partial F/\partial\epsilon}
 \end{equation}
 
 \end_inset
