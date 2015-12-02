@@ -1,11 +1,12 @@
 function [Chi_2D,kappa_2D,K_2D] = Chi(nx,xarray,nL,Larray,sigma)
+global eps
 Chi_2D(1:nx,1:nL)=0;
 
 kappa_2D(1:nx,1:nL)=0;
 K_2D(1:nx,1:nL)=0;
 for iL=1:nL
     for ix=1:nx
-        teps=eps1(xarray(ix));
+        teps=eps*(xarray(ix));
         k=(1-Larray(iL)*(1-teps));
         k=k/(2*Larray(iL)*teps);
         kappa_2D(ix,iL)=k;

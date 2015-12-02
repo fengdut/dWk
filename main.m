@@ -22,7 +22,7 @@ global xarray Larray Earray thetaarray
 nx=100;        %grid number of radial
 nL=100;        %grid number of lambda 
 nE=100;        %grid number of energy
-ntheta=22;     %grid number of theta
+ntheta=61;     %grid number of theta
 
 xa=1e-6;     %r_min, avoid r==0
 xb=1.0;      %r_max
