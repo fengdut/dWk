@@ -1,4 +1,7 @@
-function f=Yp(Lambda,epsilon,x,tau,p) 
-f=quad(@(t)Y1(Lambda,epsilon,t,x,tau,p),0,2*pi)*...
-   omega_b(Lambda,epsilon,x)/2/pi;
+function f=Yp(Y1i,kappa,Lambda,eps1,K) 
+global  dt nt  tau
+f=tau*pi*sqrt(kappa.*eps1.*Lambda/2).*...
+    simp(nt+1,dt,Y1i)./...
+    K./(2*pi);
+%f=simp(length(t),dt,fi);
 end
