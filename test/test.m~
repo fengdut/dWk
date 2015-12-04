@@ -32,10 +32,10 @@ omega=omega+0.1e-02i;
 
 
 % grid numbers
-nL=152; % Lambda grid number 
+nL=22; % Lambda grid number 
 nt=22; % theta grid number for poloidal angle
-nx=252; % x grid number for position
-ne=2002; % epsilon grid number for energy
+nx=22; % x grid number for position
+ne=22; % epsilon grid number for energy
 
 % boundaries
 xa=1e-06; % left boundary of x
@@ -237,7 +237,7 @@ tic
 %                %fxi_t1D(:)=xi_t4D(j3,j2,j1,:);
 %                Gfun4D(j3,j2,j1,j)=Gfun(gtt2D(j1,j),grt2D(j1,j),...
 %                    grr2D(j1,j),kappa_t2D(j1,j),kappa_r2D(j1,j),...
-%                    xi_t4D(j3,j2,j1,j),xi_r4D(j3,j2,j1,j));
+%                    xi_r4D(j3,j2,j1,j),xi_t4D(j3,j2,j1,j));
 %            end
 %        end
 %    end
@@ -341,9 +341,8 @@ for j2=1:no
 
  for j1=1:nx+1
     for j=1:nL+1
-        for j3=1:ne+1
-        WFe(j3)=WF4D(j2,j3,j,j1);
-        end
+        for j2
+        WFe(:)=WF4D(j2,:,j,j1);
         I1(j)=simp(ne+1,de,WFe); % integral of WF with 
                                  % respect to epsilon at 
                                  % fixed x and for nL Lambda's

@@ -5,7 +5,7 @@ function f=tfun(kappa,Lambda,t,x,eps1,K) % omega_b*t
 %kappa=(1-Lambda.*(1-eps1(x)))./(2.0.*eps1(x).*Lambda);
 global tau
 ta=0.0;
-nt1=10;% even number gives better accuracy for Simpson method
+nt1=20;% even number gives better accuracy for Simpson method
 dt=(t-ta)/nt1;
 tt=ta:dt:t;
 %fi=1./(b(t,x).*sqrt(1-Lambda./b(t,x)));

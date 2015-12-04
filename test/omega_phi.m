@@ -1,3 +1,3 @@
-function f=omega_phi(Lambda,epsilon,x)
-f=qprofile(x).*omega_b(Lambda,epsilon,x);
+function f=omega_phi(qprofile,omega_b)
+f=qprofile.*omega_b;
 end
