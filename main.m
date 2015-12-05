@@ -19,10 +19,10 @@ delta_r=0.06;
 %%%%%%%%%%%%% calculation mesh and boundary %%%%%%
 global nx nL nE ntheta xa xb La Lb Ea Eb dx dL dE dtheta 
 global xarray Larray Earray thetaarray
-nx=100;        %grid number of radial
-nL=100;        %grid number of lambda 
-nE=100;        %grid number of energy
-ntheta=61;     %grid number of theta
+nx=40;        %grid number of radial
+nL=40;        %grid number of lambda 
+nE=40;        %grid number of energy
+ntheta=40;     %grid number of theta
 
 xa=1e-6;     %r_min, avoid r==0
 xb=1.0;      %r_max
@@ -55,7 +55,7 @@ L0=0.05;        %Lambda_0
 E0=Eb;          %E_0
 Ed=1;           %Delta E
 Ec=0.8*Eb;      %E_c
-rhoh=0.08;
+rhoh=0.1;
 sigma=1;
 
 %%%%%%%%% calcuate non-omega parts %%%%%
@@ -68,7 +68,6 @@ display('begin to calculate delta wk');
 delta_wk=dwk(1.5+0.001i);
 toc
 delta_wk
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
