@@ -9,7 +9,7 @@ expr=exp(-((xarray-r0)/rd).^2);
 expL=exp(-((Larray-L0)/Ld).^2);
 
 
-E32=Earray.^1.5 +Ec^3/2;
+E32=Earray.^1.5 +Ec^1.5;
 erfcE=erfc((Earray-E0)/Ed)./E32;
 
 

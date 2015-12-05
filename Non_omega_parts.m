@@ -4,7 +4,7 @@ global xarray Larray Earray thetaarray
 %distribution function
 global rd r0 Ld L0 Ed E0 Ec sigma 
 
-tic
+%tic
 global omega_phi_3D  omega_b_3D Yp2 J_q tau_b_3D F_E_3D dFdE_omega_star_3D
 q_1D=qprofile(nx,xarray); 
 F_3D=F0_3D(nx,xarray,nL,Larray,nE,Earray,r0,rd,L0,Ld,E0,Ed,Ec);
@@ -12,13 +12,13 @@ F_E_3D=dFdE(nx,xarray,nL,Larray,nE,Earray);                                 %df_
 F_r_3D=dFdr(nx,xarray,nL,Larray,nE,Earray);                                 %df_dr(x,L,E)
 
 lambda_b_3D=lambda_b(ntheta,thetaarray,nx,xarray,nL,Larray);                %lambda_b_3D(theta,x,L)
-toc
+%toc
 
-tic
+%tic
 b_lambda_3D=b_lambda(lambda_b_3D,ntheta,thetaarray,nx,xarray,nL,Larray);    %b_lambda_3D(theta,x,L)
-toc
+%toc
 
-tic
+%tic
 Theta_3D   =Theta(b_lambda_3D,ntheta,dtheta,nx,xarray,nL,Larray);           %Theta_3D(theta,x,L)
 
 G_2D       =G(ntheta,thetaarray,nx,xarray,rs,delta_r);                      %G_2D(theta,x)
@@ -38,7 +38,7 @@ J_1D=Jac(nx,xarray);
 
 J_q=J_1D./q_1D;
 dFdE_omega_star_3D= dFdE_omega_star(nx,xarray,nL,Larray,nE,Earray,F_r_3D);
-toc
+%toc
 
 display('non-omega parts finish');
 

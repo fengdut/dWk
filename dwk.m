@@ -10,7 +10,7 @@ if(abs(iomega)<0.001)
 end
 R_3D =n_mode *omega_phi_3D + m_p*omega_b_3D -omega;
 
-R_3D(1:nx,1:nL,1:nE)=1;
+%R_3D(1:nx,1:nL,1:nE)=1;
 Yp_R_3D(1:nx,1:nL,1:nE)=0;
 
 for ix=1:nx
@@ -26,8 +26,8 @@ W3D(1:nx,1:nL,1:nE)=0+0i;
 for ix=1:nx
     for iL=1:nL
         for iE=1:nE
-         % W3D(ix,iL,iE) =J_q(ix)*Earray(iE)^3*tau_b_3D(ix,iL,iE)*F_E_3D(ix,iL,iE)*  (real(omega)-dFdE_omega_star_3D(ix,iL,iE)/F_E_3D(ix,iL,iE)) *Yp_R_3D(ix,iL,iE);
-             W3D(ix,iL,iE) =((omega)-dFdE_omega_star_3D(ix,iL,iE)/F_E_3D(ix,iL,iE));
+         W3D(ix,iL,iE) =J_q(ix)*Earray(iE)^3*tau_b_3D(ix,iL,iE)*F_E_3D(ix,iL,iE)*  (real(omega)-dFdE_omega_star_3D(ix,iL,iE)/F_E_3D(ix,iL,iE)) *Yp_R_3D(ix,iL,iE);
+     %        W3D(ix,iL,iE) =((omega)-dFdE_omega_star_3D(ix,iL,iE)/F_E_3D(ix,iL,iE));
         end
     end
 end

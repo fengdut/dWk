@@ -1,5 +1,6 @@
 clear;
 %%%%%%%%%%%%%%%% tokamak parameters %%%%%%%%%%%%%
+tic
 global R0 a eps
 R0=1.65;
 a=0.4;
@@ -19,10 +20,10 @@ delta_r=0.06;
 %%%%%%%%%%%%% calculation mesh and boundary %%%%%%
 global nx nL nE ntheta xa xb La Lb Ea Eb dx dL dE dtheta 
 global xarray Larray Earray thetaarray
-nx=40;        %grid number of radial
-nL=40;        %grid number of lambda 
-nE=40;        %grid number of energy
-ntheta=40;     %grid number of theta
+nx=301;        %grid number of radial
+nL=151;        %grid number of lambda 
+nE=601;        %grid number of energy
+ntheta=100;     %grid number of theta
 
 xa=1e-6;     %r_min, avoid r==0
 xb=1.0;      %r_max
@@ -63,12 +64,13 @@ Non_omega_parts;
 
 
 %%%%%%%%% 
-tic
+%tic
 display('begin to calculate delta wk');
 delta_wk=dwk(1.5+0.001i);
-toc
+
 delta_wk
 
 
+toc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
